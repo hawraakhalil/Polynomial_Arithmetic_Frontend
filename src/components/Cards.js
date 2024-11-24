@@ -1,9 +1,10 @@
 import React from "react";
+import "./Cards.css";
 
 function Cards() {
   return (
-    <div>
-        <h1>Hello, this is the Card's component</h1>
+    <div className = "cards">
+        <h1 className="cards-title">Hello, this is the Card's component</h1>
     </div>
   );
 }

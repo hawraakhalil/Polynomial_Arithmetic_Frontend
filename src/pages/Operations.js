@@ -1,10 +1,11 @@
 import React from "react";
 import OperationsForm from "../components/OperationsForm";
+import OperationsButtons from "../components/OperationsButtons";    
 
 function Operations() {
     return (
         <div>
-            <h1>Hello, this is the Operations Page</h1>
+            <OperationsButtons />
             <OperationsForm />
         </div>
     );
