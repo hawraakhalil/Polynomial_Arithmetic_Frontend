@@ -1,9 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Team from "./pages/Team";
+import Team from "./pages/HomePage";
 import Operations from "./pages/Operations";
 import "./App.css";
+
+
 
 function App() {
   return (

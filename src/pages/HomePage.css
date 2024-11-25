@@ -1,0 +1,49 @@
+.homepage {
+  text-align: center;
+  margin: 20px;
+}
+
+.cards-container {
+  display: flex; /* Use Flexbox for dynamic layout */
+  flex-wrap: wrap; /* Allow cards to wrap onto new rows */
+  justify-content: center; /* Center cards horizontally */
+  align-items: flex-start; /* Align cards at the top */
+  gap: 20px; /* Add spacing between cards */
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in width/height calculation */
+}
+
+.card {
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add some shadow */
+  flex: 1 1 calc(33.33% - 40px); /* Responsive: 3 cards per row by default */
+  max-width: 300px; /* Prevent cards from growing too large */
+  min-width: 250px; /* Prevent cards from shrinking too small */
+}
+
+.Decrypt-title {
+  color: #717fb5;
+  font-family: 'Tangerine';
+  font-size: 3.5rem;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+  .card {
+    flex: 1 1 calc(50% - 40px); /* 2 cards per row on medium screens */
+  }
+}
+
+/* Small Screens (Mobile Phones) */
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 calc(100% - 40px); /* Full-width cards on small screens */
+  }
+
+  .Decrypt-title {
+    font-size: 2.5rem; /* Adjust font size for smaller screens */
+  }
+}
