@@ -8,13 +8,13 @@ import "./App.css";
 function App() {
   return (
     <>
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route exact path="/" element={<Team />} />
-        <Route exact path="/operations" element={<Operations />} />
-      </Routes>
-    </Router>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<Team />} />
+          <Route exact path="/operations" element={<Operations />} />
+        </Routes>
+      </Router>
     </>
   );
 }

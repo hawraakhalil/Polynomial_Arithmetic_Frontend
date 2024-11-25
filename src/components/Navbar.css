@@ -1,0 +1,25 @@
+
+.navbar {
+    background-color: #717fb5; 
+    color: #ffffff; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    padding: 10px 20px; 
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    position: relative;
+  }
+  
+  .navbar-title {
+    font-family: 'TAN New York', sans-serif; 
+    font-size: 24px; 
+    font-weight: bold; 
+    
+  }
+  
+  
+  .navbar-icon:hover {
+    color: #d6e8f7; 
+  }
+  

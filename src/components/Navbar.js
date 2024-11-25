@@ -1,12 +1,16 @@
 import React from "react";
-import "./Navbar.css";
+import "./Navbar.css"; 
 
-function Navbar() {
-    return (
-        <div>
-            <h1>Hello, this is the Navbar component</h1>
-        </div>
-    );
-    }
+const Navbar = () => {
+  return (
+    <div className="navbar">
+      <h1 className="navbar-title">Polynomial Operations</h1>
+      <div className="navbar-icon">
+        {/* You can use an icon from FontAwesome or any SVG */}
+        <i className="fas fa-lock-open"></i>
+      </div>
+    </div>
+  );
+};
 
 export default Navbar;
