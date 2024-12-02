@@ -5,9 +5,6 @@ import Team from "./pages/HomePage";
 import Operations from "./pages/Operations";
 import "./App.css";
 
-
-
-
 function App() {
   return (
     <>
