@@ -12,14 +12,41 @@
   }
   
   .navbar-title {
-    font-family: 'TAN New York', sans-serif; 
-    font-size: 24px; 
+    font-family:"League Spartan" ;
+    font-size: 32px; 
     font-weight: bold; 
-    
+    color: white;
   }
   
-  
+  .navbar-icon {
+    font-size: 50px;
+    color: white; 
+    margin-left: auto;
+    margin-right: 1rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  /* Optional hover effect */
   .navbar-icon:hover {
-    color: #d6e8f7; 
+    color: #ffcc00;
+    cursor: pointer;
+    transform: scale(1.2);
   }
-  
+
+@media (max-width: 768px) {
+  .navbar-icon {
+    font-size: 40px;
+  }
+  .navbar-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-icon {
+    font-size: 25px;
+  }
+  .navbar-title {
+    font-size: 24px;
+  }
+}

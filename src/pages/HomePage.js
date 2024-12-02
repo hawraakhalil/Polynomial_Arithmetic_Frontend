@@ -5,7 +5,7 @@ import "./HomePage.css";
 const HomePage = () => {
   const teamMembers = [
     {
-      name: "Pia Maria El Chedid",
+      name: "Pia Maria Chedid",
       image: "/images/pia.jpg",
       quote: "Encryption is the key to privacy.",
       size: { width: "300px", height: "200px" },
@@ -14,7 +14,7 @@ const HomePage = () => {
     {
       name: "Hawraa Khalil",
       image: "/images/hawraa.jpg",
-      quote: "Data security starts with encryption.",
+      quote: "Look for the lock 👀🔒",
       size: { width: "300px", height: "200px" },
       color: "#ccffcc",
     },
@@ -35,7 +35,7 @@ const HomePage = () => {
     {
       name: "Lea Azar",
       image: "/images/lea.jpg",
-      quote: "Encrypted data is protected data.",
+      quote: "Unlock to find our work! 🔓",
       size: { width: "300px", height: "200px" },
       color: "#ffccff",
     },

@@ -32,7 +32,7 @@
 /* Front Side */
 .card-front {
   display: flex;
-  background: #d6e8f7;
+  background: #B6BFF1;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -68,7 +68,7 @@
 
 /* Back Side */
 .card-back {
-  background: #d6e8f7;
+  background: #B6BFF1;
   transform: rotateY(180deg); /* Start flipped */
   color: white;
   padding: 10px;
@@ -83,15 +83,15 @@
 }
 
 .quote {
-  color: #717fb5;
-  font-family: 'Tangerine', serif;
-  font-size: 3rem;
+  color: white;
+  font-family:"League Spartan" ;
+  font-size: 2rem;
   font-weight: bold;
 }
 
 .name {
-  color: #717fb5;
-  font-family: 'Tangerine', serif;
+  color: white;
+  font-family:"League Spartan" ;
   font-size: 2rem;
   font-weight: bold;
 }
