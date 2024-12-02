@@ -1,76 +1,94 @@
 .operations-form {
-    max-width: 500px;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
+    max-width: 80%; /* Keeps the wider layout */
+    margin: 20px auto;
+    font-family: "League Spartan", sans-serif; /* Font remains consistent */
     padding: 20px;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    background-color: #f4f7fc;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     text-align: center;
     color: #4a4a8a;
     margin-bottom: 20px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    font-family: "League Spartan", sans-serif; /* Ensure header uses the correct font */
 }
 
 .form-group {
+    margin: 20px 0; /* Spacing between groups */
     display: flex;
-    flex-direction: column;
-    gap: 5px;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between; /* Spreads input and labels */
 }
 
 label {
     font-weight: bold;
     color: #4a4a8a;
+    width: 150px;
+    text-align: left;
+    font-size: 22px; /* Larger font size for labels */
 }
 
-input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fefefe;
-}
-
+/* Inputs and Select with colored borders */
+input,
 select {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    flex: 1; /* Keeps wider input fields */
+    padding: 15px; /* Padding for a larger look */
+    font-size: 18px; /* Text size */
+    border: 2px solid #d6e8f7; /* Light gray-blue border */
+    border-radius: 10px; /* Rounded corners */
     background-color: #fff;
+    transition: all 0.3s ease; /* Smooth hover effect */
 }
 
+input:focus,
+select:focus {
+    border-color: #4a4a8a; /* Purple border on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(74, 74, 138, 0.5); /* Subtle glow effect */
+}
+
+input.disabled {
+    background-color: #e0e0e0; /* Grayed out for disabled inputs */
+    cursor: not-allowed;
+}
+
+/* Result Boxes and Copy Buttons */
 .result-box {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .result-wrapper {
     display: flex;
     align-items: center;
     gap: 10px;
+    flex: 1;
 }
 
 .copy-button {
-    padding: 5px 10px;
-    font-size: 14px;
-    background-color: #4a4a8a;
+    padding: 10px 20px;
+    font-size: 16px;
     color: white;
+    background-color: #4a4a8a; /* Purple button color */
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .copy-button:hover {
-    background-color: #7373c6;
+    background-color: #7373c6; /* Slightly lighter purple on hover */
+}
+
+/* Error border for invalid inputs */
+.error-border {
+    border: 2px solid red;
+}
+
+/* Compact error messages above inputs */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin: -15px 0 5px; /* Keeps the error message compact */
 }
