@@ -1,15 +1,22 @@
 import React from "react";
 import "./OperationsButtons.css";
 
-function OperationsButtons() {
+function OperationsButtons({ onHover, onClick }) {
+  const operations = ["Add", "Subtract", "Divide", "Invert", "Multiply", "Modulo"];
+
   return (
     <div className="operations-buttons">
-      <button className="operation-button">Addition</button>
-      <button className="operation-button">Subtraction</button>
-      <button className="operation-button">Division</button>
-      <button className="operation-button">Inversion</button>
-      <button className="operation-button">Multiplication</button>
-      <button className="operation-button">Modulo</button>
+      {operations.map((operation) => (
+        <button
+          key={operation}
+          className="operation-button"
+          onMouseEnter={() => onHover(operation)} // Trigger hover handler
+          onMouseLeave={() => onHover("")} // Clear hover on leave
+          onClick={() => onClick(operation)} 
+        >
+          {operation}
+        </button>
+      ))}
     </div>
   );
 }

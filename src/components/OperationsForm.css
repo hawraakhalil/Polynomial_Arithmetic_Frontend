@@ -47,10 +47,6 @@ select:focus {
     box-shadow: 0 0 5px rgba(74, 74, 138, 0.5); /* Subtle glow effect */
 }
 
-input.disabled {
-    background-color: #e0e0e0; /* Grayed out for disabled inputs */
-    cursor: not-allowed;
-}
 
 /* Result Boxes and Copy Buttons */
 .result-box {
@@ -92,3 +88,124 @@ input.disabled {
     font-size: 14px;
     margin: -15px 0 5px; /* Keeps the error message compact */
 }
+.error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.highlight-poly1 {
+    box-shadow: 0 0 8px #4a4a8a;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .highlight-all {
+    border: 2px solid #4a4a8a;
+    box-shadow: 0 0 8px #4a4a8a;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .gray-out {
+    background-color: #e0e0e0;
+    border: 2px solid grey;
+    opacity: 0.6;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  /* Wrapper for input and icon */
+.copy-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .copy-input {
+    width: 100%;
+    padding-right: 40px; /* Add space for the icon */
+    font-size: 16px;
+    border: 2px solid #d6e8f7;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+  
+  .copy-icon {
+    position: absolute;
+    right: 10px; /* Position the icon inside the input field */
+    cursor: pointer;
+    font-size: 18px;
+    color: #4a4a8a;
+    transition: color 0.3s ease;
+  }
+  
+  .copy-icon:hover {
+    color: #7373c6; /* Change color on hover */
+  }
+  
+  /* Combined wrapper for input and icon */
+.result-wrapper.copy-wrapper {
+    position: relative; /* Enables positioning the icon */
+    display: inline-flex; /* Aligns input and icon */
+    align-items: center;
+    width: 100%;
+  }
+  
+  /* Input styling */
+  .copy-input {
+    width: 100%;
+    padding-right: 40px; /* Space for the icon */
+    font-size: 16px;
+    border: 2px solid #d6e8f7;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    padding-left: 10px; /* Padding for text */
+  }
+  
+  /* Copy icon wrapper */
+  .copy-icon-wrapper {
+    position: absolute;
+    right: 10px; /* Position inside input field */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* FontAwesome icon styling */
+  .copy-icon {
+    font-size: 18px;
+    color: #4a4a8a;
+    transition: color 0.3s ease;
+  }
+  
+  .copy-icon-wrapper:hover .copy-icon {
+    color: #7373c6; /* Change color on hover */
+  }
+  
+  /* Tooltip styling */
+  .copy-tooltip {
+    visibility: hidden; /* Hidden by default */
+    opacity: 0;
+    background-color: #7373c6;
+    color: white;
+    font-size: 12px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    position: absolute;
+    top: -30px; /* Position above the icon */
+    right: 0; /* Align to the icon */
+    white-space: nowrap;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1;
+  }
+  
+  /* Show tooltip on hover */
+  .copy-icon-wrapper:hover .copy-tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0); /* Smooth transition */
+  }
+  
