@@ -60,15 +60,48 @@ const OperationsForm = forwardRef(({ hoveredOperation, operation }, ref) => {
     };
   
     const handleCopy = (text) => {
-      navigator.clipboard.writeText(text).then(() => {
-        alert(`Copied to clipboard: ${text}`);
-      });
-    };
+        navigator.clipboard.writeText(text).catch((err) => {
+          console.error('Failed to copy text: ', err);
+        });
+      };
   
     const handleSubmit = async (operation) => {
       if (!operation) {
         alert("Please select an operation");
         return;
+      }
+
+       // Validation for polynomial inputs
+    if (operation === "Modulo" || operation === "Invert") {
+        if (!formData.poly1) {
+          setErrors((prevErrors) => ({
+            ...prevErrors,
+            poly1: "Enter a value for Polynomial 1",
+          }));
+          return;
+        }
+        if (formData.poly2) {
+          setErrors((prevErrors) => ({
+            ...prevErrors,
+            poly2: "This operation takes only 1 polynomial",
+          }));
+          return;
+        }
+      } else {
+        if (!formData.poly1) {
+          setErrors((prevErrors) => ({
+            ...prevErrors,
+            poly1: "Enter a value for Polynomial 1",
+          }));
+          return;
+        }
+        if (!formData.poly2) {
+          setErrors((prevErrors) => ({
+            ...prevErrors,
+            poly2: "Enter a value for Polynomial 2",
+          }));
+          return;
+        }
       }
 
       const formatForPayload = inputFormat === "binary" ? "bin" : inputFormat;
@@ -194,7 +227,7 @@ const OperationsForm = forwardRef(({ hoveredOperation, operation }, ref) => {
           onChange={handleInputChange}
           placeholder={generatePlaceholder(parseInt(formData.bits), inputFormat)}
           className={
-            hoveredOperation === "Invert" || "Modulo" ? "gray-out" : hoveredOperation ? "highlight-all" : ""
+            hoveredOperation === "Invert" || hoveredOperation === "Modulo" ? "gray-out" : hoveredOperation ? "highlight-all" : ""
           }
         />
         {errors.poly2 && <p className="error">{errors.poly2}</p>}
