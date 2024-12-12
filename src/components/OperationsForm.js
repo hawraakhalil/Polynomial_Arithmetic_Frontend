@@ -66,9 +66,28 @@ const OperationsForm = forwardRef(({ hoveredOperation, operation }, ref) => {
       };
   
     const handleSubmit = async (operation) => {
+
+    setErrors({ poly1: "", poly2: "" });
+
       if (!operation) {
         alert("Please select an operation");
         return;
+      }
+
+      if (operation === "Divide") {
+        // Check if the second polynomial is all zeros
+        const isZeroPoly = (poly) => {
+          // Remove any whitespace and check if the polynomial is all zeros
+          return poly.trim().split('').every(char => char === '0');
+        };
+    
+        if (isZeroPoly(formData.poly2)) {
+          setErrors((prevErrors) => ({
+            ...prevErrors,
+            poly2: "Cannot divide by zero polynomial",
+          }));
+          return;
+        }
       }
 
        // Validation for polynomial inputs
