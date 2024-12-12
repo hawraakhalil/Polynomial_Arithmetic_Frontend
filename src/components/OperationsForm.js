@@ -157,6 +157,8 @@ const OperationsForm = forwardRef(({ hoveredOperation, operation }, ref) => {
     // Prepare the payload based on the operation and input format
     const formatForPayload = inputFormat === "binary" ? "bin" : inputFormat;
 
+    console.log(formatForPayload)
+
     // Payload object to be sent to the API
     const payload = {
       bits: parseInt(formData.bits),
@@ -164,13 +166,16 @@ const OperationsForm = forwardRef(({ hoveredOperation, operation }, ref) => {
       type: formatForPayload,
     };
 
+
     // Add the polynomial values to the payload based on the operation
     if (operation === "Invert" || operation === "Modulo") {
-      payload[inputFormat] = formData.poly1;
+        payload[(operation === "Modulo" || operation == "Invert") && inputFormat === "binary" ? "bin" : inputFormat] = formData.poly1;
     } else {
       payload[`${formatForPayload}1`] = formData.poly1;
       payload[`${formatForPayload}2`] = formData.poly2;
     }
+
+    console.log(payload)
 
     // Perform the operation using the API
     try {
@@ -189,6 +194,8 @@ const OperationsForm = forwardRef(({ hoveredOperation, operation }, ref) => {
 
       // Parse the response
       const data = await response.json();
+
+      console.log(data)
 
       // Check for errors in the response
       if (!response.ok) {
@@ -211,19 +218,33 @@ const OperationsForm = forwardRef(({ hoveredOperation, operation }, ref) => {
       } else {
         throw new Error("Unexpected response format or missing results");
       }
-
+      console.log(data)
       // Update the result fields
       setResult({
         binary: binaryResult,
         hex: hexResult,
       });
     } catch (error) {
-      console.error("Error:", error);
-      alert(
-        error.message || "An error occurred while performing the operation"
-      );
-    }
+        console.error("Error:", error);
+        
+        // Different error handling based on error type
+        if (error.response) {
+          // The request was made and the server responded with a status code
+          // that falls out of the range of 2xx
+          alert(error.response.data.message || error.message);
+        } else if (error.request) {
+          // The request was made but no response was received
+          alert("No response received from the server");
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          alert(error.message || "An unexpected error occurred");
+        }
+      }
+
+
   };
+
+  
 
   return (
     <div className="operations-form">
