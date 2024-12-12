@@ -1,211 +1,201 @@
 .operations-form {
-    max-width: 80%; /* Keeps the wider layout */
-    margin: 20px auto;
-    font-family: "League Spartan", sans-serif; /* Font remains consistent */
-    padding: 20px;
+  max-width: 80%;
+  margin: 20px auto;
+  font-family: "League Spartan", sans-serif;
+  padding: 20px;
 }
 
 h1 {
-    text-align: center;
-    color: #4a4a8a;
-    margin-bottom: 20px;
-    font-family: "League Spartan", sans-serif; /* Ensure header uses the correct font */
+  text-align: center;
+  color: #4a4a8a;
+  margin-bottom: 20px;
+  font-family: "League Spartan", sans-serif;
 }
 
 .form-group {
-    margin: 20px 0; /* Spacing between groups */
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    justify-content: space-between; /* Spreads input and labels */
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
 }
 
 label {
-    font-weight: bold;
-    color: #4a4a8a;
-    width: 150px;
-    text-align: left;
-    font-size: 22px; /* Larger font size for labels */
+  font-weight: bold;
+  color: #4a4a8a;
+  width: 150px;
+  text-align: left;
+  font-size: 22px;
 }
 
-/* Inputs and Select with colored borders */
 input,
 select {
-    flex: 1; /* Keeps wider input fields */
-    padding: 15px; /* Padding for a larger look */
-    font-size: 18px; /* Text size */
-    border: 2px solid #d6e8f7; /* Light gray-blue border */
-    border-radius: 10px; /* Rounded corners */
-    background-color: #fff;
-    transition: all 0.3s ease; /* Smooth hover effect */
+  flex: 1;
+  padding: 15px;
+  font-size: 18px;
+  border: 2px solid #d6e8f7;
+  border-radius: 10px;
+  background-color: #fff;
+  transition: all 0.3s ease;
 }
 
 input:focus,
 select:focus {
-    border-color: #4a4a8a; /* Purple border on focus */
-    outline: none;
-    box-shadow: 0 0 5px rgba(74, 74, 138, 0.5); /* Subtle glow effect */
+  border-color: #4a4a8a;
+  outline: none;
+  box-shadow: 0 0 5px rgba(74, 74, 138, 0.5);
 }
 
-
-/* Result Boxes and Copy Buttons */
 .result-box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .result-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
 }
 
 .copy-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #4a4a8a; /* Purple button color */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #4a4a8a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .copy-button:hover {
-    background-color: #7373c6; /* Slightly lighter purple on hover */
+  background-color: #7373c6;
 }
 
-/* Error border for invalid inputs */
 .error-border {
-    border: 2px solid red;
+  border: 2px solid red;
 }
 
-/* Compact error messages above inputs */
 .error-message {
-    color: red;
-    font-size: 14px;
-    margin: -15px 0 5px; /* Keeps the error message compact */
+  color: red;
+  font-size: 14px;
+  margin: -15px 0 5px;
 }
 .error {
-    color: red;
-    font-size: 0.9rem;
-    margin-top: 5px;
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
 }
 
 .highlight-poly1 {
-    box-shadow: 0 0 8px #4a4a8a;
-    transition: box-shadow 0.3s ease;
-  }
-  
-  .highlight-all {
-    border: 2px solid #4a4a8a;
-    box-shadow: 0 0 8px #4a4a8a;
-    transition: box-shadow 0.3s ease;
-  }
-  
-  .gray-out {
-    background-color: #e0e0e0;
-    border: 2px solid grey;
-    opacity: 0.6;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
-  /* Wrapper for input and icon */
+  box-shadow: 0 0 8px #4a4a8a;
+  transition: box-shadow 0.3s ease;
+}
+
+.highlight-all {
+  border: 2px solid #4a4a8a;
+  box-shadow: 0 0 8px #4a4a8a;
+  transition: box-shadow 0.3s ease;
+}
+
+.gray-out {
+  background-color: #e0e0e0;
+  border: 2px solid grey;
+  opacity: 0.6;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
 .copy-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-  
-  .copy-input {
-    width: 100%;
-    padding-right: 40px; /* Add space for the icon */
-    font-size: 16px;
-    border: 2px solid #d6e8f7;
-    border-radius: 10px;
-    background-color: #fff;
-    transition: all 0.3s ease;
-  }
-  
-  .copy-icon {
-    position: absolute;
-    right: 10px; /* Position the icon inside the input field */
-    cursor: pointer;
-    font-size: 18px;
-    color: #4a4a8a;
-    transition: color 0.3s ease;
-  }
-  
-  .copy-icon:hover {
-    color: #7373c6; /* Change color on hover */
-  }
-  
-  /* Combined wrapper for input and icon */
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.copy-input {
+  width: 100%;
+  padding-right: 40px;
+  font-size: 16px;
+  border: 2px solid #d6e8f7;
+  border-radius: 10px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.copy-icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #4a4a8a;
+  transition: color 0.3s ease;
+}
+
+.copy-icon:hover {
+  color: #7373c6;
+}
+
 .result-wrapper.copy-wrapper {
-    position: relative; /* Enables positioning the icon */
-    display: inline-flex; /* Aligns input and icon */
-    align-items: center;
-    width: 100%;
-  }
-  
-  /* Input styling */
-  .copy-input {
-    width: 100%;
-    padding-right: 40px; /* Space for the icon */
-    font-size: 16px;
-    border: 2px solid #d6e8f7;
-    border-radius: 10px;
-    background-color: #fff;
-    transition: all 0.3s ease;
-    padding-left: 10px; /* Padding for text */
-  }
-  
-  /* Copy icon wrapper */
-  .copy-icon-wrapper {
-    position: absolute;
-    right: 10px; /* Position inside input field */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-  }
-  
-  /* FontAwesome icon styling */
-  .copy-icon {
-    font-size: 18px;
-    color: #4a4a8a;
-    transition: color 0.3s ease;
-  }
-  
-  .copy-icon-wrapper:hover .copy-icon {
-    color: #7373c6; /* Change color on hover */
-  }
-  
-  /* Tooltip styling */
-  .copy-tooltip {
-    visibility: hidden; /* Hidden by default */
-    opacity: 0;
-    background-color: #7373c6;
-    color: white;
-    font-size: 12px;
-    padding: 5px 8px;
-    border-radius: 5px;
-    position: absolute;
-    top: -30px; /* Position above the icon */
-    right: 0; /* Align to the icon */
-    white-space: nowrap;
-    transform: translateY(10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    z-index: 1;
-  }
-  
-  /* Show tooltip on hover */
-  .copy-icon-wrapper:hover .copy-tooltip {
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(0); /* Smooth transition */
-  }
-  
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+}
+
+.copy-input {
+  width: 100%;
+  padding-right: 40px;
+  font-size: 16px;
+  border: 2px solid #d6e8f7;
+  border-radius: 10px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  padding-left: 10px;
+}
+
+.copy-icon-wrapper {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.copy-icon {
+  font-size: 18px;
+  color: #4a4a8a;
+  transition: color 0.3s ease;
+}
+
+.copy-icon-wrapper:hover .copy-icon {
+  color: #7373c6;
+}
+
+.copy-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  background-color: #7373c6;
+  color: white;
+  font-size: 12px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  position: absolute;
+  top: -30px;
+  right: 0;
+  white-space: nowrap;
+  transform: translateY(10px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  z-index: 1;
+}
+
+.copy-icon-wrapper:hover .copy-tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}

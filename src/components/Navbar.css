@@ -1,37 +1,38 @@
-
 .navbar {
-    background-color: #717fb5; 
-    color: #ffffff; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-    padding: 10px 20px; 
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-    position: relative;
-  }
-  
-  .navbar-title {
-    font-family:"League Spartan" ;
-    font-size: 32px; 
-    font-weight: bold; 
-    color: white;
-  }
-  
-  .navbar-icon {
-    font-size: 50px;
-    color: white; 
-    margin-left: auto;
-    margin-right: 1rem;
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
+  background-color: #717fb5;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
 
-  /* Optional hover effect */
-  .navbar-icon:hover {
-    color: #ffcc00;
-    cursor: pointer;
-    transform: scale(1.2);
-  }
+.navbar-title {
+  font-family: "League Spartan";
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+}
+
+.navbar-icon {
+  font-size: 50px;
+  color: white;
+  margin-left: auto;
+  margin-right: 1rem;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Optional hover effect */
+.navbar-icon:hover {
+  color: #ffcc00;
+  cursor: pointer;
+  transform: scale(1.2);
+}
 
 @media (max-width: 768px) {
   .navbar-icon {
