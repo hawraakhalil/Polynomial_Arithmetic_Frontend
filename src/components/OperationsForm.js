@@ -37,7 +37,24 @@ const OperationsForm = forwardRef(({ hoveredOperation, operation }, ref) => {
       const { name, value } = e.target;
       const maxBits = parseInt(formData.bits);
       const maxLength = inputFormat === "binary" ? maxBits : maxBits / 4;
-  
+
+        // Validation based on input format
+        const isValidInput = () => {
+            if (inputFormat === "binary") {
+            // Only allow 0s and 1s for binary
+            return /^[01]*$/.test(value);
+            } else if (inputFormat === "hex") {
+            // Only allow 0-9 and A-F (case insensitive)
+            return /^[0-9A-Fa-f]*$/.test(value);
+            }
+            return true;
+        };
+
+        // If input is invalid, do nothing
+        if (!isValidInput()) {
+            return;
+        }
+
       setErrors((prevErrors) => ({
         ...prevErrors,
         [name]: "",
@@ -229,6 +246,7 @@ const OperationsForm = forwardRef(({ hoveredOperation, operation }, ref) => {
           value={formData.poly1}
           onChange={handleInputChange}
           placeholder={generatePlaceholder(parseInt(formData.bits), inputFormat)}
+          title={`Enter ${inputFormat === 'binary' ? '0s and 1s' : '0-9 and A-F'}`}
           className= {
            hoveredOperation ? "highlight-all" : ""
           }
@@ -245,6 +263,7 @@ const OperationsForm = forwardRef(({ hoveredOperation, operation }, ref) => {
           value={formData.poly2}
           onChange={handleInputChange}
           placeholder={generatePlaceholder(parseInt(formData.bits), inputFormat)}
+          title={`Enter ${inputFormat === 'binary' ? '0s and 1s' : '0-9 and A-F'}`}
           className={
             hoveredOperation === "Invert" || hoveredOperation === "Modulo" ? "gray-out" : hoveredOperation ? "highlight-all" : ""
           }
