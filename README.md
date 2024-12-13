@@ -75,8 +75,6 @@ The frontend provides a visually engaging and interactive interface, featuring:
   - Disabled fields for unsupported operations like Modulo and Inversion.
 - **Mobile Responsiveness**: Fully responsive for mobile devices.
 
-![Frontend Example](https://galois-field-operations.com/)
-
 ---
 
 ## Hosting & Deployment
