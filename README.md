@@ -1,70 +1,97 @@
-# Getting Started with Create React App
+# Polynomial Operations in Galois Fields (GF(2^m))
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project implements polynomial arithmetic in Galois Fields (GF(2^m)) with a focus on mathematical rigor, computational accuracy, and user-centered design. It provides a robust backend and an intuitive frontend to support operations such as addition, subtraction, multiplication, division, modulo reduction, and inversion. The project has wide applications in cryptography, error correction, and digital communication.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+1. [Introduction](#introduction)
+2. [Goals & Features](#goals--features)
+3. [Core Functions](#core-functions)
+4. [Backend](#backend)
+5. [Frontend](#frontend)
+6. [Hosting & Deployment](#hosting--deployment)
+7. [Conclusion](#conclusion)
+8. [GitHub Repositories](#github-repositories)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Introduction
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Polynomial arithmetic in GF(2^m) is a cornerstone of secure cryptographic algorithms, robust error-correcting codes, and efficient digital communication systems. This project addresses the complexities of polynomial operations in finite fields, providing a scalable solution for diverse applications.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Goals & Features
 
-### `npm run build`
+### Goals:
+- Develop a tool for accurate polynomial arithmetic in GF(2^m).
+- Ensure a seamless user experience through an interactive frontend and reliable backend.
+- Enable key operations: addition, subtraction, multiplication, division, modulo reduction, and inversion.
+- Support binary and hexadecimal input with dynamic result formatting.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Features:
+- **Backend**: Built with Python, featuring modular design, robust error handling, and RESTful APIs.
+- **Frontend**: Modern, responsive design using frameworks, intuitive input fields, and dynamic buttons.
+- **Scalability**: Fully documented API for integration and extension.
+- **Accessibility**: Secure hosting and deployment for consistent availability.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Core Functions
 
-### `npm run eject`
+1. **Addition/Subtraction**:
+   - Unified as a single operation using XOR in GF(2^m).
+2. **Multiplication**:
+   - Includes bitwise operations with modulo reduction using irreducible polynomials.
+3. **Modulo Reduction**:
+   - Reduces polynomials to their smallest equivalent representation within GF(2^m).
+4. **Division**:
+   - Computes both quotient and remainder using polynomial alignment and XOR.
+5. **Inversion**:
+   - Uses the Extended Euclidean Algorithm to compute the multiplicative inverse.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Backend
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The backend serves as the computational engine, handling all polynomial operations with precision and efficiency. It includes:
+- **RESTful API**: All operations exposed via a documented API.
+- **Error Handling**: Structured responses for exceptions.
+- **Testing**: Pytest for validation and debugging.
+- **Logging**: Comprehensive logs for easy troubleshooting.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+API documentation is available via Swagger: [Swagger Interface](https://rubah.pythonanywhere.com/apidocs).
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Frontend
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The frontend provides a visually engaging and interactive interface, featuring:
+- **Team Presentation**: Cards for team members with flip animations and thematic hints.
+- **Operations Page**:
+  - Intuitive buttons for each polynomial operation.
+  - Input fields for parameters (binary/hexadecimal format, number of bits, etc.).
+  - Compute button for clarity and ease of use.
+  - Disabled fields for unsupported operations like Modulo and Inversion.
+- **Mobile Responsiveness**: Fully responsive for mobile devices.
 
-### Code Splitting
+![Frontend Example](https://galois-field-operations.com/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## Hosting & Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The project is securely hosted on AWS Route S3, ensuring accessibility and reliable performance. Visit the tool at: [https://galois-field-operations.com/](https://galois-field-operations.com/).
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Conclusion
 
-### Advanced Configuration
+This project successfully bridges mathematical complexity and user-friendly design, enabling precise polynomial arithmetic in GF(2^m). Its scalable architecture and secure hosting make it a versatile solution for cryptography, error correction, and digital communication.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## GitHub Repositories
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Frontend**: [Polynomial Arithmetic Frontend](https://github.com/hawraakhalil/Polynomial_Arithmetic_Frontend)
+- **Backend**: [Polynomial Arithmetic Backend](https://github.com/RubaHoussami/Polynomial_Arithmetic)
