@@ -199,3 +199,39 @@ select:focus {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+.compute-button {
+  display: block;
+  margin: 20px auto; /* Center the button */
+  width: 200px; /* Adjust width for size */
+  height: 50px; /* Adjust height for size */
+  font-size: 18px; /* Larger font for better visibility */
+  font-weight: bold;
+  background-color: #99a0bc; /* Consistent button color */
+  color: #d6e8f7; /* Text color */
+  border: 1px solid #99a0bc; /* Button border */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  cursor: pointer; /* Pointer cursor for interactivity */
+  transition: all 0.3s ease; /* Smooth hover effect */
+  font-family: "League Spartan";
+}
+
+.compute-button:hover {
+  background-color: #a9c9ff; /* Hover color */
+  color: white; /* Hover text color */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.compute-button:active {
+  transform: scale(1); /* Reset scale when clicked */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle active shadow */
+}
+
+.disabled-input {
+  background-color: #f0f0f0; /* Light gray to indicate deactivation */
+  color: #a0a0a0; /* Muted text color */
+  border: 1px solid #d0d0d0; /* Lighter border */
+  cursor: not-allowed; /* Change cursor to indicate non-interactivity */
+}

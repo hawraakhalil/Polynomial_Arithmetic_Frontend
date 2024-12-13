@@ -293,40 +293,53 @@ const OperationsForm = forwardRef(({ hoveredOperation, operation }, ref) => {
         {errors.poly1 && <p className="error">{errors.poly1}</p>}
       </div>
       <div className="form-group">
-        <label>Polynomial 2</label>
-        <input
-          type="text"
-          name="poly2"
-          value={formData.poly2}
-          onChange={handleInputChange}
-          placeholder={generatePlaceholder(
-            parseInt(formData.bits),
-            inputFormat
-          )}
-          title={`Enter ${inputFormat === "binary" ? "0s and 1s" : "0-9 and A-F"}`}
-          className={
-            hoveredOperation === "Invert" || hoveredOperation === "Modulo"
-              ? "gray-out"
-              : hoveredOperation
-                ? "highlight-all"
-                : ""
-          }
-        />
-        {errors.poly2 && <p className="error">{errors.poly2}</p>}
-      </div>
+  <label>Polynomial 2</label>
+  <input
+    type="text"
+    name="poly2"
+    value={formData.poly2}
+    onChange={handleInputChange}
+    placeholder={generatePlaceholder(
+      parseInt(formData.bits),
+      inputFormat
+    )}
+    title={`Enter ${
+      inputFormat === "binary" ? "0s and 1s" : "0-9 and A-F"
+    }`}
+    className={`${
+      hoveredOperation === "Invert" || hoveredOperation === "Modulo"
+        ? "disabled-input" // Apply disabled style
+        : ""
+    }`}
+    disabled={
+      hoveredOperation === "Invert" || hoveredOperation === "Modulo"
+    } // Disable the field for specific operations
+  />
+  {errors.poly2 && <p className="error">{errors.poly2}</p>}
+</div>
 
       <div className="form-group">
-        <label>
-          Parameter <i>m</i>
-        </label>
-        <input
-          type="text"
-          name="m"
-          value={formData.m}
-          onChange={handleInputChange}
-          placeholder="Enter an integer"
-        />
-      </div>
+      <label>
+        Parameter <i>m</i>
+      </label>
+      <input
+        type="text"
+        name="m"
+        value={formData.m}
+        onChange={handleInputChange}
+        placeholder="Enter an integer"
+      />
+    </div>
+    <div style={{ textAlign: "center", marginTop: "20px" }}>
+      {/* Compute Button */}
+      <button
+        className="compute-button"
+        type="button"
+        onClick={() => handleSubmit(operation)}
+      >
+        Compute
+      </button>
+    </div>
       {/* Results with Copy Buttons */}
       <div className="form-group result-box">
         <label>Binary Result</label>
